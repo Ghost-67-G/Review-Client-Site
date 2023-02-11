@@ -12,9 +12,7 @@ require("./db/db")
 
 app.use(myExpress.static(path.join(__dirname,'build')));
 app.use(myExpress.static(path.join(__dirname,'dashboard')));
-app.get("*",(req,resp)=>{
-        resp.sendFile(path.join(__dirname+'/build/index.html'))
-})
+
 app.get("*",(req,resp)=>{
         resp.sendFile(path.join(__dirname+'/dashboard/index.html'))
 })
