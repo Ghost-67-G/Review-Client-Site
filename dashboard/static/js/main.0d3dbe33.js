@@ -26797,7 +26797,7 @@
               (0, ol.jsx)("div", {
                 className: "sidebar-heading border-bottom ",
                 children: (0, ol.jsx)(Xe, {
-                  to: "/",
+                  to: "/admin",
                   children: (0, ol.jsx)("img", {
                     alt: "Alt content",
                     className: "w-100",
