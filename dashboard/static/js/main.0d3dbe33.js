@@ -26815,7 +26815,7 @@
                       children: (0, ol.jsxs)(Xe, {
                         tag: "a",
                         className: "fs-5 lh-lg",
-                        to: "/",
+                        to: "/admin",
                         children: [
                           (0, ol.jsx)("i", { className: "fa fa-dashboard" }),
                           " Dashboard",
