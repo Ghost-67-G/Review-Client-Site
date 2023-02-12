@@ -10,11 +10,10 @@ app.use(myExpress.json());
 require("./db/db")
 
 
-app.use(myExpress.static(path.join(__dirname,'build')));
-app.use(myExpress.static(path.join(__dirname,'dashboard')));
+app.use(myExpress.static(path.resolve(__dirname,'build')));
 
 app.get("*",(req,resp)=>{
-        resp.sendFile(path.join(__dirname+'/dashboard/index.html'))
+        resp.sendFile(path.resolve(__dirname+'/build/index.html'))
 })
 app.use(userRoute)
 app.use(companyRoute)
