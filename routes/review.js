@@ -13,7 +13,24 @@ route.post("/submit-review", async(req, resp)=>{
     resp.end()
 })
 
-
+route.get("/get-admin-reviews",async(req,resp)=>{
+    const reviews = await Review.find()
+    resp.json({reviews})
+})
+route.delete("/delete-review", async (req, resp) => {
+    await Review.findByIdAndDelete(req.query.obj.id);
+    User.findOne({user_name:req.query.obj.user},(err,user)=>{
+        let index = user.user_reviews.findIndex((item)=>item.review==req.query.obj.review)
+        user.user_reviews.splice(index,1)
+        user.save()
+    })
+    Company.findOne({company_name:req.query.obj.company},(err,company)=>{
+        let index = company.company_reviews.findIndex((item)=>item.review==req.query.obj.review)
+        company.company_reviews.splice(index,1)
+        company.save()
+    })
+    resp.json({ success: true });
+  });
 
 
 module.exports = route;
