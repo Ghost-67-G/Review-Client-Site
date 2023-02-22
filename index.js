@@ -5,6 +5,8 @@ const companyRoute = require('./routes/company')
 const searchRoute = require('./routes/search')
 const reviewRoute = require('./routes/review')
 app.use(myExpress.json());
+const path = require('path')
+
 
 require("./db/db")
 
